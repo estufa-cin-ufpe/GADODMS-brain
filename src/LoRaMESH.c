@@ -21,7 +21,7 @@ typedef struct
 
 /* ----- Private Variables ----- */
 static Frame_Typedef frame;
-static uint16_t deviceId = -1;
+static uint16_t deviceId = 1;
 
 
 /* ----- Public Variables ----- */
@@ -280,7 +280,7 @@ MeshStatus_Typedef ReceivePacketTransp(uint16_t* id, uint8_t* payload, uint8_t* 
       waitNextByte--;
     }
     timeout--;
-    delay(1);
+    for(int delay_cnt = 0; delay_cnt < 1000; delay_cnt++);
   }
 
   /* In case it didn't get any data */
