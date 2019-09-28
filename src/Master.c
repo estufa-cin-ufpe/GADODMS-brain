@@ -95,31 +95,32 @@ int main(int argc, char *argv[])
 	double ponto[2];
 	double rssi;
 
-	for(int i = 0; i < 4; i++){
-		if(ReceivePacketTransp(&remote_id, buffer_payload, &payload_size, 5000) == MESH_OK){
-			DEBUG_MESSAGE("id da msg: %d\n", remote_id);
-			build_rssi(buffer_payload);
-			for(int j = 0; j < 3; j++){
-				for(int k = 0; k < 2; k++){
-					DEBUG_MESSAGE("%f ", rssi_matrix[j][k]);
-				}
+	while(true){
+		while(ReceivePacketTransp(&remote_id, buffer_payload, &payload_size, 5000) != MESH_OK);
+		if(buffer_payload[0] == 'e') break;
+		DEBUG_MESSAGE("id da msg: %d\n", remote_id);
+		build_rssi(buffer_payload);
+		for(int j = 0; j < 3; j++){
+			for(int k = 0; k < 2; k++){
+				DEBUG_MESSAGE("%f ", rssi_matrix[j][k]);
 			}
 		}
+
+		for(i=0;i<3;i++){
+			id = (int)(rssi_matrix[i][1]);
+			rssi = rssi_matrix[i][0];
+			d[i]=pow(10, ((rssi-rssi_base[id])/(10*n[id])));
+		}
+		nelder_mead_optimization(d, ponto);
+		DEBUG_MESSAGE("Res: %f %f \n", ponto[0], ponto[1]);
+		build_vector(position_payload, ponto);
+		//position_payload[8] = 10;
+		for(int i=0; i<9; i++){
+			DEBUG_MESSAGE("%d   ", position_payload[i]);
+		}
+		PrepareFrameTransp(0, position_payload, sizeof(position_payload));
+		if(SendPacket() == MESH_OK) DEBUG_MESSAGE("Mandei\n");
 	}
-	for(i=0;i<3;i++){
-		id = (int)(rssi_matrix[i][1]);
-		rssi = rssi_matrix[i][0];
-		d[i]=pow(10, ((rssi-rssi_base[id])/(10*n[id])));
-	}
-	nelder_mead_optimization(d, ponto);
-	DEBUG_MESSAGE("Res: %f %f \n", ponto[0], ponto[1]);
-	build_vector(position_payload, ponto);
-	//position_payload[8] = 10;
-	for(int i=0; i<9; i++){
-		DEBUG_MESSAGE("%d   ", position_payload[i]);
-	}
-	PrepareFrameTransp(0, position_payload, sizeof(position_payload));
-	if(SendPacket() == MESH_OK) DEBUG_MESSAGE("Mandei\n");
 	return 0;
 }
 
