@@ -41,7 +41,7 @@ all: Master
 Master: $(USER_OBJS) $(SRC_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: CrossCore GCC ARM Embedded C Linker'
-	arm-none-eabi-gcc -T"C:\Users\Estufa 02\Desktop\CattleDMS\Master/RTE/Device/ADuCM3029/ADuCM3029.ld" -Wl,--gc-sections -mcpu=cortex-m3 -mthumb -specs=rdimon.specs -o  "Master" @input-file.txt -lm
+	arm-none-eabi-gcc -TC:\Users\tiago\OneDrive\Documentos\Master/RTE/Device/ADuCM3029/ADuCM3029.ld -Wl,--gc-sections -mcpu=cortex-m3 -mthumb -specs=rdimon.specs -o  "Master" @input-file.txt -lm
 	@echo 'Finished building target: $@'
 	@echo ' '
 

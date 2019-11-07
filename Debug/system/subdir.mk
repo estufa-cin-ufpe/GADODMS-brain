@@ -17,7 +17,7 @@ C_DEPS += \
 system/%.o: ../system/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore GCC ARM Embedded C Compiler'
-	arm-none-eabi-gcc -g -gdwarf-2 -ffunction-sections -fdata-sections -DCORE0 -D_DEBUG -D_RTE_ -D__ADUCM3029__ -D__SILICON_REVISION__=0x100 @includes-f1055e5c1c2853d069c0dde258c52165.txt -Wall -c -mcpu=cortex-m3 -mthumb -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o  "$@" "$<"
+	arm-none-eabi-gcc -g -gdwarf-2 -ffunction-sections -fdata-sections -DCORE0 -D_DEBUG -D_RTE_ -D__ADUCM3029__ -D__SILICON_REVISION__=0x100 @includes-642cbcea8ddbf1c75e19538cf7ae234e.txt -Wall -c -mcpu=cortex-m3 -mthumb -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o  "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

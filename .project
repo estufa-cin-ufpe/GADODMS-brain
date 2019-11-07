@@ -63,4 +63,10 @@
 			<locationURI>$%7Bcmsis_pack_root%7D/AnalogDevices/ADuCM302x_DFP/3.2.0/Source/common.c</locationURI>
 		</link>
 	</linkedResources>
+	<variableList>
+		<variable>
+			<name>CCES</name>
+			<value>file:/C:/Analog%20Devices/CrossCore%20Embedded%20Studio%202.8.0</value>
+		</variable>
+	</variableList>
 </projectDescription>

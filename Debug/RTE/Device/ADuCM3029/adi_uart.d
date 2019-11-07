@@ -1,4 +1,4 @@
-RTE/Device/ADuCM3029/adi_uart.d: \
+RTE/Device/ADuCM3029/adi_uart.o: \
  C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/ADuCM302x_DFP/3.2.0/Source/drivers/uart/adi_uart.c \
  C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/ADuCM302x_DFP/3.2.0/Include/drivers/uart/adi_uart.h \
  C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/ADuCM302x_DFP/3.2.0/Include/adi_processor.h \
@@ -19,14 +19,14 @@ RTE/Device/ADuCM3029/adi_uart.d: \
  C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/ARM/CMSIS/4.5.0/CMSIS/Include/cmsis_gcc.h \
  C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/ARM/CMSIS/4.5.0/CMSIS/Include/core_cmFunc.h \
  C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/ADuCM302x_DFP/3.2.0/Include/system_ADuCM3029.h \
- C:/Users/Estufa\ 02/Desktop/CattleDMS/Master/RTE/Device/ADuCM3029/adi_uart_config.h \
- C:/Users/Estufa\ 02/Desktop/CattleDMS/Master/RTE/Device/ADuCM3029/adi_global_config.h \
+ C:/Users/tiago/OneDrive/Documentos/Master/RTE/Device/ADuCM3029/adi_uart_config.h \
+ C:/Users/tiago/OneDrive/Documentos/Master/RTE/Device/ADuCM3029/adi_global_config.h \
  C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/ADuCM302x_DFP/3.2.0/Include/rtos_map/adi_rtos_map.h \
  C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/ADuCM302x_DFP/3.2.0/Include/rtos_map/adi_rtos_map_noos.h \
  C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/ADuCM302x_DFP/3.2.0/Include/drivers/pwr/adi_pwr.h \
  C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/ADuCM302x_DFP/3.2.0/Include/adi_callback.h \
  C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/ADuCM302x_DFP/3.2.0/Include/adi_cyclecount.h \
- C:/Users/Estufa\ 02/Desktop/CattleDMS/Master/RTE/Device/ADuCM3029/adi_cycle_counting_config.h \
+ C:/Users/tiago/OneDrive/Documentos/Master/RTE/Device/ADuCM3029/adi_cycle_counting_config.h \
  C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/ADuCM302x_DFP/3.2.0/Include/drivers/dma/adi_dma.h \
  C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/ADuCM302x_DFP/3.2.0/Source/drivers/uart/adi_uart_def.h
 
@@ -68,9 +68,9 @@ C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/ARM/CMSIS/4.5.0/
 
 C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/ADuCM302x_DFP/3.2.0/Include/system_ADuCM3029.h:
 
-C:/Users/Estufa\ 02/Desktop/CattleDMS/Master/RTE/Device/ADuCM3029/adi_uart_config.h:
+C:/Users/tiago/OneDrive/Documentos/Master/RTE/Device/ADuCM3029/adi_uart_config.h:
 
-C:/Users/Estufa\ 02/Desktop/CattleDMS/Master/RTE/Device/ADuCM3029/adi_global_config.h:
+C:/Users/tiago/OneDrive/Documentos/Master/RTE/Device/ADuCM3029/adi_global_config.h:
 
 C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/ADuCM302x_DFP/3.2.0/Include/rtos_map/adi_rtos_map.h:
 
@@ -82,7 +82,7 @@ C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/AD
 
 C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/ADuCM302x_DFP/3.2.0/Include/adi_cyclecount.h:
 
-C:/Users/Estufa\ 02/Desktop/CattleDMS/Master/RTE/Device/ADuCM3029/adi_cycle_counting_config.h:
+C:/Users/tiago/OneDrive/Documentos/Master/RTE/Device/ADuCM3029/adi_cycle_counting_config.h:
 
 C:/Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.8.0/ARM/packs/AnalogDevices/ADuCM302x_DFP/3.2.0/Include/drivers/dma/adi_dma.h:
 

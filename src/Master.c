@@ -9,12 +9,23 @@
 #include "timer0.h"
 #include "uart.h"
 #include "LoRaMESH.h"
+#include "EKF.h"
 #include <string.h>
 #include "common.h"
 #include <stdio.h>
 #include <math.h>
 
+#define MAX_PONTOS 3
+
 float rssi_matrix[3][2];
+
+void init_rssi(){
+	int i;
+	for(i=0;i<MAX_PONTOS;i++){
+		inicializar(i);
+		modelar(i);
+	}
+}
 
 void build_rssi(uint8_t *buffer){
 	float temp;
@@ -46,11 +57,11 @@ void nelder_mead_optimization(double* d, double* solution){
     //float *custo;
     double base[3][2];
     base[0][0] = 0;
-    base[0][1] = 1;
-    base[1][0] = 2;
-    base[1][1] = 1;
-    base[2][0] = 1;
-    base[2][1] = 0;
+    base[0][1] = 0;
+    base[1][0] = 0;
+    base[1][1] = 6.53;
+    base[2][0] = 4.78;
+    base[2][1] = 6.53;
 
 
     float a, b, c, D, e, f;
@@ -91,9 +102,11 @@ int main(int argc, char *argv[])
 	dados[2][0] = 19;
 	dados[2][1] = 2;*/
 
-	double d[3], n[3] = {4.29, 4.29, 4.29}, rssi_base[3] = {25.52, 25.52, 25.52}; //definir valores para n
+	double d[3], n[3] = {4.29, 4.29, 4.29}, rssi_base[3] = {32.1, 32.1, 32.1}; //definir valores para n
 	double ponto[2];
-	double rssi;
+	double rssi, rssi_kalman;
+
+	init_rssi();
 
 	while(true){
 		while(ReceivePacketTransp(&remote_id, buffer_payload, &payload_size, 5000) != MESH_OK);
@@ -109,7 +122,10 @@ int main(int argc, char *argv[])
 		for(i=0;i<3;i++){
 			id = (int)(rssi_matrix[i][1]);
 			rssi = rssi_matrix[i][0];
-			d[i]=pow(10, ((rssi-rssi_base[id])/(10*n[id])));
+			passo(&rssi, id);
+			rssi_kalman = getX(0, id);
+			d[id]=pow(10, ((rssi-rssi_base[id])/(10*n[id])));
+			DEBUG_MESSAGE("%d: %f ", id, d[id]);
 		}
 		nelder_mead_optimization(d, ponto);
 		DEBUG_MESSAGE("Res: %f %f \n", ponto[0], ponto[1]);
