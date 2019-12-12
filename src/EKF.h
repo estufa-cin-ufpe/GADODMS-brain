@@ -251,12 +251,12 @@ void inicializar(int index){
     
 
     for(int i=0;i<Nsta;i++){
-        pontos[index].Q[i*Nsta+i] = 0.59;
-        pontos[index].P[i*Nsta+i] = 15;
+        pontos[index].Q[i*Nsta+i] = 0.2;
+        pontos[index].P[i*Nsta+i] = 1000.0;
     }
 
     for(int i=0; i<Mobs;i++){
-        pontos[index].R[i*Mobs+i] = 0.96;
+        pontos[index].R[i*Mobs+i] = 8.0;
     }
 
     //x = {0.0};
